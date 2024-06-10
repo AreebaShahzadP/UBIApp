@@ -32,7 +32,7 @@ const LoginScreen = () => {
           />
         </View>
         <View style={styles.input}>
-          <MaterialCommunityIcons name="lock" color="#666666" size={20} />
+          <MaterialCommunityIcons name="lock" color="#666666" size={22} />
           <TextInput
             placeholder={'Password'}
             placeholderTextColor='#666666'
