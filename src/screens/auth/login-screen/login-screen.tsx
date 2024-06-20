@@ -9,10 +9,9 @@ import React, {useState} from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './styles';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}:any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
@@ -21,9 +20,11 @@ const LoginScreen = () => {
             Please enter your email address {'\n'} and password
           </Text>
         </View>
-        <View style={styles.input}>
+
+        <View>
+        <View style={styles.inputContainer}>
           <MaterialCommunityIcons name="email" color="#666666" size={20} />
-          <TextInput
+          <TextInput style={styles.input}
             placeholder={'Email address'}
             placeholderTextColor='#666666'
             value={email}
@@ -31,9 +32,9 @@ const LoginScreen = () => {
             secureTextEntry={false}
           />
         </View>
-        <View style={styles.input}>
+        <View style={styles.inputContainer}>
           <MaterialCommunityIcons name="lock" color="#666666" size={22} />
-          <TextInput
+          <TextInput style={styles.input}
             placeholder={'Password'}
             placeholderTextColor='#666666'
             value={password}
@@ -41,12 +42,14 @@ const LoginScreen = () => {
             secureTextEntry={true}
           />
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress= {()=>navigation.navigate('Patients')}
+        style={styles.button}>
           <Text style={styles.buttontxt}>Login</Text>
         </TouchableOpacity>
+        </View>
         <View style={styles.heading}>
           <Text style={styles.txt1}>Don't have an account??</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
           <Text style={styles.txt}>Sign Up</Text>
           </TouchableOpacity>
         </View>
