@@ -1,24 +1,21 @@
-import React, {StyleSheet} from 'react-native';
-import {View, Text, TouchableOpacity} from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import React from 'react-native';
+import {View} from 'react-native';
 import styles from './styles';
+import {HeaderInquire} from '../../../components';
 
 const Patient = ({navigation}: any) => {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity
-          style={styles.icon}
-          onPress={() => navigation.goBack()}>
-          <MaterialCommunityIcons
-            name="keyboard-backspace"
-            color="white"
-            size={20}
-          />
-        </TouchableOpacity>
-        <Text style={styles.txt}>Patients</Text>
+      <HeaderInquire
+        onPress={() => navigation.goBack()}
+        title="Patients"
+        Iconname="keyboard-backspace"
+        Iconcolor="white"
+        Iconsize={20}
+      />
+      <View>
+        <View></View>
       </View>
-      <View></View>
     </View>
   );
 };
