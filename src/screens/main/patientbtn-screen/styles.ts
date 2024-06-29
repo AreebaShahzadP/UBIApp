@@ -16,12 +16,15 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
     marginHorizontal: 10,
   },
-  txt: {
+  headertxt: {
     // backgroundColor: 'orange',
     color: 'white',
     marginHorizontal: 10,
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  list: {
+    paddingBottom: 10,
   },
 });
 
